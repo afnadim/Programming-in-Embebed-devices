@@ -1,0 +1,36 @@
+<!-- 
+/home/pi/Desktop/Home_security/Web_server/templates/web_template.html 
+-->
+<!DOCTYPE html>
+<html>
+   <style>
+   body{
+       background-color: #33FFE9;
+
+       }
+   H2{
+
+        background-color: #29A686
+    }
+   
+    H3{
+
+        background-color: #2BA629
+    }
+
+   </style>
+   <head>
+      <title>{{ title }}</title>
+      
+   </head>
+
+   <body>
+      <h2>Pitures taken by the Home Security System</h2>
+      {% for f in file %}
+      <p>{{url_for('static',filename=f)}}</p>
+      <p><img width="300" src="{{url_for('static',filename=f)}}"></p>
+      <br>
+      {% endfor %}
+      
+   </body>
+</html>
